@@ -1,0 +1,38 @@
+.employee-count {
+    margin-left: 20px;
+    visibility: hidden;
+}
+
+.table-container {
+    overflow: auto;
+    visibility: hidden;
+    margin: 20px;
+}
+
+.show {
+    visibility: visible;
+}
+
+table {
+    background: transparent;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.mat-cell {
+    padding-right: 100px;
+    white-space: nowrap;
+}
+
+.mat-header-cell {
+    padding-right: 10px;
+    white-space: nowrap;
+}
+
+.mat-header-cell ::ng-deep {
+    text-transform: uppercase;
+}
+
+.zebra-stripe {
+    background-color: #FAFAFA;
+}

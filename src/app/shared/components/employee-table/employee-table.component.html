@@ -1,0 +1,31 @@
+<div class="employee-count" [class.show]="dataSource.data.length > 0">
+    {{ dataSource.data.length }} {{ dataSource.data.length === 1 ? 'employee' : 'employees' }}
+</div>
+<div class="table-container" [class.show]="dataSource.data.length">
+    <table mat-table [dataSource]="dataSource" matSort>
+        <ng-container [matColumnDef]="Column.NAME">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ EmployeeLabel.NAME }} </th>
+            <td mat-cell *matCellDef="let employee"> {{ getName(employee) }}</td>
+        </ng-container>
+        <ng-container [matColumnDef]="Column.LOCATION">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ EmployeeLabel.LOCATION }} </th>
+            <td mat-cell *matCellDef="let employee"> {{ getLocation(employee) }} </td>
+        </ng-container>
+        <ng-container [matColumnDef]="Column.EMAIL_ADDRESS">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ EmployeeLabel.EMAIL_ADDRESS }}</th>
+            <td mat-cell *matCellDef="let employee"> {{ getEmailAddress(employee) }} </td>
+        </ng-container>
+        <ng-container [matColumnDef]="Column.STATUS">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ EmployeeLabel.STATUS }} </th>
+            <td mat-cell *matCellDef="let employee"> {{ getStatus(employee) }} </td>
+        </ng-container>
+        <ng-container [matColumnDef]="Column.ACTION">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+            <td mat-cell *matCellDef="let employee">
+                <button mat-stroked-button (click)="viewInfo(employee)">View</button>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="columns"></tr>
+        <tr mat-row *matRowDef="let employee; let row; let even = even; columns: columns;" [class.zebra-stripe]="even"></tr>
+    </table>
+</div>

@@ -17,12 +17,4 @@ export class EmployeeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  close(): void {
-    this.dialogRef.close();
-  }
-
-  update() {
-    
-  }
-
 }

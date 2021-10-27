@@ -6,9 +6,13 @@
 
 .image-container {
     margin-bottom: 20px;
-
+    display: flex;
+    flex-direction: row;
     img {
         height: 100px;
         width: 100px;
+    }
+    .status {
+        margin: 10px;
     }
 }

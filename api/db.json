@@ -1,16 +1,123 @@
 {
-    "users": [
-      {
-        "id": 1,
-        "name": "FC Barcelona",
-        "coach": "Ernesto Valverde",
-        "description": "The best football team in the world!"
-      },
-      {
-        "id": 2,
-        "name": "Real Madrid",
-        "coach": "Zinedine Zidane",
-        "description": "The worst football team in the world!"
-      }
+    "users": [{
+            "id": 1,
+            "name": "Kosala Yapa",
+            "location": "Ernesto Valverde",
+            "email": "kosalayapa@gmail.com",
+            "status": "Employed",
+            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Joy Cannon",
+            "location": "Singapore",
+            "email": "zidane@gmail.com",
+            "status": "Employed",
+            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Mahir Ortega",
+            "location": "England",
+            "email": "valverde@gmail.com",
+            "status": "Discarded",
+            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Farhana Wardle",
+            "location": "Australia",
+            "email": "wardle@gmail.com",
+            "status": "Discarded",
+            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Farhana Wardle",
+            "location": "England",
+            "email": "wardle@gmail.com",
+            "status": "Discarded",
+            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+        },
+        {
+            "id": 6,
+            "name": "Tom Betts",
+            "location": "Japan",
+            "email": "tom@gmail.com",
+            "status": "Employed",
+            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+        },
+        {
+            "id": 7,
+            "name": "Tom Betts",
+            "location": "Japan",
+            "email": "tom@gmail.com",
+            "status": "Employed",
+            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+        },
+        {
+            "id": 8,
+            "name": "Tom Betts",
+            "location": "Japan",
+            "email": "tom@gmail.com",
+            "status": "Employed",
+            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+        },
+        {
+            "id": 9,
+            "name": "Tom Betts",
+            "location": "Japan",
+            "email": "tom@gmail.com",
+            "status": "Employed",
+            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+        },
+        {
+            "id": 10,
+            "name": "Tom Betts",
+            "location": "Japan",
+            "email": "tom@gmail.com",
+            "status": "Employed",
+            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+        },
+        {
+            "id": 11,
+            "name": "Tom Betts",
+            "location": "Japan",
+            "email": "tom@gmail.com",
+            "status": "Employed",
+            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+        },
+        {
+            "id": 12,
+            "name": "Tom Betts",
+            "location": "Japan",
+            "email": "tom@gmail.com",
+            "status": "Employed",
+            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+        },
+        {
+            "id": 13,
+            "name": "Tom Betts",
+            "location": "Japan",
+            "email": "tom@gmail.com",
+            "status": "Employed",
+            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+        },
+        {
+            "id": 14,
+            "name": "Tom Betts",
+            "location": "Japan",
+            "email": "tom@gmail.com",
+            "status": "Employed",
+            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+        },
+        {
+            "id": 15,
+            "name": "Tom Betts",
+            "location": "Japan",
+            "email": "tom@gmail.com",
+            "status": "Employed",
+            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+        }
     ]
-  }
+}

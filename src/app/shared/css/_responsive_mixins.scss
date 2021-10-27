@@ -1,0 +1,79 @@
+// Breakpoints matching the ones defined by the angular/flex-layouts
+$xs-min-width:0;
+$xs-max-width: 599px;
+$sm-min-width: 600px;
+$sm-max-width: 959px;
+$md-min-width: 960px;
+$md-max-width: 1279px;
+$lg-min-width: 1280px;
+$lg-max-width: 1919px;
+
+@mixin for-screen($breakpoint, $relation: '=') {
+    $min-value: $breakpoint;
+    $max-value: $breakpoint;
+
+    @if $breakpoint==xs {
+        $min-value: $xs-min-width;
+        $max-value: $xs-max-width;
+    }
+
+    @if $breakpoint==sm {
+        $min-value: $sm-min-width;
+        $max-value: $sm-max-width;
+    }
+
+    @if $breakpoint==md {
+        $min-value: $md-min-width;
+        $max-value: $md-max-width;
+    }
+
+    @if $breakpoint==lg {
+        $min-value: $lg-min-width;
+        $max-value: $lg-max-width;
+    }
+
+    @if $relation=='>' {
+        $min-value: $max-value + 1px;
+        $max-value: null;
+    }
+
+    @else if $relation=='>=' {
+        $max-value: null;
+    }
+
+    @else if $relation=='<' {
+        $max-value: $min-value - 1px;
+        $min-value: null;
+    }
+
+    @else if $relation=='<=' {
+        $min-value: null;
+    }
+
+    @if $min-value !=null and $max-value !=null {
+        @media only screen and (min-width: $min-value) and (max-width: $max-value) {
+            @content;
+        }
+    }
+
+    @else if $min-value !=null {
+        @media only screen and (min-width: $min-value) {
+            @content;
+        }
+    }
+
+    @else if $max-value !=null {
+        @media only screen and (max-width: $max-value) {
+            @content;
+        }
+    }
+}
+
+// Make sure flexbox is working all the browsers.
+@mixin flex-display() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}

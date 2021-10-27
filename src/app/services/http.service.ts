@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Params } from '@angular/router';
@@ -17,9 +17,9 @@ export class HttpService {
   ) { }
 
   /** GET method which returns Observable of T. */
-  get<T>(url: string, p?: Params): Observable<T> {
+  get<T>(url: string, p?: Params): Observable<HttpResponse<T>> {
     let header = this.createHeader();
-    return this.http.get<T>(url, { headers: header, params: p })
+    return this.http.get<T>(url, { headers: header, params: p, observe: 'response', },)
       .pipe(
         catchError(this.handleError)
       );
@@ -37,7 +37,8 @@ export class HttpService {
   }
 
   private createHeader(): HttpHeaders {
-    let header = new HttpHeaders().set('Accept', 'application/json');
+    let header = new HttpHeaders().set('Accept', 'application/json')
+      .set('Content-Type', 'application/json');
     return header;
   }
 
