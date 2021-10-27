@@ -1,0 +1,40 @@
+<div class="employee-container">
+    <h1 mat-dialog-title>Employee</h1>
+    <mat-dialog-content>
+        <div class="image-container">
+            <img src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+        </div>
+        <div class="form-container">
+            <form #empForm="ngForm">
+                <div>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Name</mat-label>
+                        <input matInput [(ngModel)]="employee.name" name="name" required>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Location</mat-label>
+                        <input matInput type="email" [(ngModel)]="employee.location" name="location" required>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Email Address</mat-label>
+                        <input matInput [(ngModel)]="employee.email" name="email" required>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Status</mat-label>
+                        <input matInput [(ngModel)]="employee.status" name="status" required>
+                    </mat-form-field>
+                </div>
+            </form>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-raised-button (click)="close()">Cancel</button>
+        <button mat-raised-button color="primary" [disabled]="empForm.invalid" (click)="update()">Update</button>
+    </mat-dialog-actions>
+</div>
