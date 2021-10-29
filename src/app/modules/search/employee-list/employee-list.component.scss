@@ -1,0 +1,10 @@
+.employee-list-container {
+    padding: 20px;
+    .filter-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 5px;
+        margin: 20px;
+    }
+}
