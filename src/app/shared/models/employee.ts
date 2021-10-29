@@ -14,3 +14,11 @@ export enum EmployeeLabel {
     LOCATION = 'Location',
     STATUS = 'Status',
 }
+
+/** Filters */
+export enum SearchParamLabel {
+    PAGE = '_page',
+    LIMIT = '_limit',
+    SORT = '_sort',
+    ORDER = '_order',
+}

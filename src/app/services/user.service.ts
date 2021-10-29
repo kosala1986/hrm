@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from './http.service';
 import { map } from 'rxjs/operators';
-import { HttpResponse } from '@angular/common/http';
-import { Employee } from '../shared/models/employee';
+import { HttpParams } from '@angular/common/http';
+import { Employee, SearchParamLabel } from '../shared/models/employee';
 import { Observable } from 'rxjs';
-import { Params } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { Query } from '../modules/search/employee-list/employee-list.component';
 
 export interface EmployeeList {
   total: number;
@@ -22,8 +22,19 @@ export class UserService {
   ) { }
 
   /** Gets employee list from the backend API. */
-  getEmployees(queryParam?: Params): Observable<EmployeeList> {
-    return this.httpService.get(environment.getEmployeeUrl, queryParam)
+  getEmployees(queryParam?: Query): Observable<EmployeeList> {
+
+    let params = new HttpParams()
+      .set(SearchParamLabel.LIMIT, String(queryParam?.[SearchParamLabel.LIMIT]))
+      .set(SearchParamLabel.PAGE, String(queryParam?.[SearchParamLabel.PAGE]))
+      .set(SearchParamLabel.SORT, String(queryParam?.sort.active).toLowerCase())
+      .set(SearchParamLabel.ORDER, String(queryParam?.sort.direction).toLowerCase());
+
+    if (queryParam?.filter) {
+      params = params.append(queryParam.filter.field.toLowerCase(), String(queryParam.filter.value));
+    }
+
+    return this.httpService.get(environment.getEmployeeUrl, params)
       .pipe(
         map((response) => {
           const totalCount = response.headers.get('X-Total-Count') ?
