@@ -11,18 +11,23 @@ import { tap, debounceTime, distinctUntilChanged, map, filter } from 'rxjs/opera
 import { Column } from '../../../shared/components/employee-table/employee-table.component';
 import { Sort } from '@angular/material/sort';
 
+/**  Model which has all query params. */
 export interface Query {
   [SearchParamLabel.LIMIT]: number;
   [SearchParamLabel.PAGE]: number;
   sort: Sort;
-  filter?: Fiter;
+  filter?: Filter;
 }
 
-export interface Fiter {
-  field: string;
+/** Search field: Name and value: David */
+export interface Filter {
+  field: Column;
   value: string,
 }
 
+/**
+ *  This component represents the employee table with search functionality.
+ */
 @Component({
   selector: 'app-employee-list',
   templateUrl: './employee-list.component.html',
@@ -30,13 +35,14 @@ export interface Fiter {
 })
 export class EmployeeListComponent implements OnInit, AfterViewInit, OnDestroy {
 
-  readonly columns = Object.values(Column).filter(value => value != Column.ID && value != Column.ACTION);
+  readonly columns = Object.values(Column)
+    .filter(value => value != Column.ID && value != Column.ACTION);
 
   @ViewChild(EmployeeTableComponent) readonly employeeTable!: EmployeeTableComponent;
 
   @ViewChild('paginator') paginator!: MatPaginator;
 
-  searchQuery$ = new Subject<Event>();
+  searchSubject$ = new Subject<Event>();
 
   searchedValue: string = '';
 
@@ -44,17 +50,18 @@ export class EmployeeListComponent implements OnInit, AfterViewInit, OnDestroy {
 
   searchQuery?: Query;
 
-  dataSource!: UserDataSource;
+  readonly dataSource: UserDataSource;
 
   totalCount = 0;
 
   constructor(
     private readonly userService: UserService,
     private readonly dialog: MatDialog,
-  ) { }
+  ) {
+    this.dataSource = new UserDataSource(this.userService);
+  }
 
   ngOnInit(): void {
-    this.dataSource = new UserDataSource(this.userService);
 
     this.dataSource.getEmployees({
       [SearchParamLabel.PAGE]: 0,
@@ -68,9 +75,10 @@ export class EmployeeListComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngAfterViewInit() {
 
-    this.employeeTable.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
+    this.employeeTable.sort.sortChange
+      .subscribe(() => this.paginator.pageIndex = 0);
 
-    this.searchQuery$
+    this.searchSubject$
       .pipe(
         map(event => {
           const { target } = event;
@@ -80,7 +88,7 @@ export class EmployeeListComponent implements OnInit, AfterViewInit, OnDestroy {
             return '';
           }
         }),
-        filter(searchQuery => searchQuery.length === 0 || searchQuery.length > 2),
+        filter(searchedText => searchedText.length === 0 || searchedText.length > 2),
         debounceTime(500),
         distinctUntilChanged(),
         tap((searchedValue) => {
@@ -142,6 +150,6 @@ export class EmployeeListComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.searchQuery$.unsubscribe();
+    this.searchSubject$.unsubscribe();
   }
 }

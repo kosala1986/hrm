@@ -6,6 +6,10 @@ import { UserService } from "./user.service";
 import { catchError, finalize } from "rxjs/operators";
 import { Query } from '../modules/search/employee-list/employee-list.component';
 
+/**
+ *  Custom data source which connects to the datatable view while sorting, filtering
+ *  and pagination events. This calls UserService to get data from API.
+ */
 export class UserDataSource implements DataSource<Employee> {
     private EmployeesSubject = new BehaviorSubject<Employee[]>([]);
 
@@ -17,7 +21,6 @@ export class UserDataSource implements DataSource<Employee> {
     }
 
     getEmployees(query: Query) {
-
         this.userService.getEmployees(query)
             .pipe(
                 catchError(() => of([])),
@@ -30,10 +33,13 @@ export class UserDataSource implements DataSource<Employee> {
             );
     }
 
+    /** Connects this data source to it's view */
     connect(collectionViewer: CollectionViewer): Observable<Employee[]> {
         return this.EmployeesSubject.asObservable();
     }
 
+    /** Disconnects this data source from it's view when the view is getting
+     * destroyed. */
     disconnect(collectionViewer: CollectionViewer): void {
         this.EmployeesSubject.complete();
         this.totalCountSubject.complete();

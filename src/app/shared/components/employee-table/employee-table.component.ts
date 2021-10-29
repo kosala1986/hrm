@@ -3,6 +3,7 @@ import { MatSort } from '@angular/material/sort';
 import { UserDataSource } from '../../../services/user.datasource';
 import { Employee, EmployeeLabel } from '../../models/employee';
 
+/** Employee table column names. */
 export enum Column {
   ID = 'id',
   NAME = 'Name',

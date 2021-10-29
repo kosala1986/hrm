@@ -11,7 +11,7 @@ export interface EmployeeList {
   total: number;
   result: Employee[];
 }
-
+/** User service providing data to the components. */
 @Injectable({
   providedIn: 'root'
 })

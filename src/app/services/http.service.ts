@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse, HttpResponse, HttpParams } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Params } from '@angular/router';
 
 /**
  * Single endpoint service to communicate to backend.
@@ -12,7 +11,6 @@ import { Params } from '@angular/router';
   providedIn: 'root'
 })
 export class HttpService {
-
   constructor(private readonly http: HttpClient,
   ) { }
 
@@ -37,7 +35,8 @@ export class HttpService {
   }
 
   private createHeader(): HttpHeaders {
-    let header = new HttpHeaders().set('Accept', 'application/json')
+    let header = new HttpHeaders()
+      .set('Accept', 'application/json')
       .set('Content-Type', 'application/json');
     return header;
   }
