@@ -4,7 +4,7 @@ import { Employee, SearchParamLabel } from '../../../shared/models/employee';
 import { EmployeeTableComponent } from '../../../shared/components/employee-table/employee-table.component';
 import { UserService } from '../../../services/user.service';
 import { MatDialog } from '@angular/material/dialog';
-import { Subject, of, merge } from 'rxjs';
+import { Subject, merge } from 'rxjs';
 import { EmployeeComponent } from './../employee/employee.component';
 import { UserDataSource } from "../../../services/user.datasource";
 import { tap, debounceTime, distinctUntilChanged, map, filter } from 'rxjs/operators';
@@ -84,7 +84,7 @@ export class EmployeeListComponent implements OnInit, AfterViewInit, OnDestroy {
         debounceTime(500),
         distinctUntilChanged(),
         tap((searchedValue) => {
-          
+
           this.paginator.pageIndex = 0;
           this.searchedValue = searchedValue;
 
@@ -104,7 +104,7 @@ export class EmployeeListComponent implements OnInit, AfterViewInit, OnDestroy {
     merge(this.employeeTable.sort.sortChange, this.paginator.page)
       .pipe(
         tap(() => {
-          if(!this.employeeTable.sort.direction) {
+          if (!this.employeeTable.sort.direction) {
             this.employeeTable.sort.direction = 'asc';
             this.employeeTable.sort.active = Column.NAME;
           }

@@ -8,19 +8,19 @@
             <form #empForm="ngForm">
                 <div>
                     <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label>Name</mat-label>
+                        <mat-label> {{ EmployeeLabel.NAME }}</mat-label>
                         <input matInput [(ngModel)]="employee.name" name="name" required>
                     </mat-form-field>
                 </div>
                 <div>
                     <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label>Location</mat-label>
+                        <mat-label>{{ EmployeeLabel.LOCATION }}</mat-label>
                         <input matInput type="email" [(ngModel)]="employee.location" name="location" required>
                     </mat-form-field>
                 </div>
                 <div>
                     <mat-form-field class="example-full-width" appearance="fill">
-                        <mat-label>Email Address</mat-label>
+                        <mat-label>{{ EmployeeLabel.EMAIL_ADDRESS }}</mat-label>
                         <input matInput [(ngModel)]="employee.email" name="email" required>
                     </mat-form-field>
                 </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Employee } from '../../../shared/models/employee';
+import { Employee ,EmployeeLabel } from '../../../shared/models/employee';
 
 @Component({
   selector: 'employee-dialog',
@@ -8,6 +8,8 @@ import { Employee } from '../../../shared/models/employee';
   styleUrls: ['./employee.component.scss']
 })
 export class EmployeeComponent implements OnInit {
+
+  readonly EmployeeLabel = EmployeeLabel;
 
   constructor(
     public dialogRef: MatDialogRef<EmployeeComponent>,
