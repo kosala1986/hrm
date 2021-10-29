@@ -34,7 +34,7 @@ export class UserService {
       params = params.append(queryParam.filter.field.toLowerCase(), String(queryParam.filter.value));
     }
 
-    return this.httpService.get(environment.getEmployeeUrl, params)
+    return this.httpService.get(environment.getEmployeesUrl, params)
       .pipe(
         map((response) => {
           const totalCount = response.headers.get('X-Total-Count') ?

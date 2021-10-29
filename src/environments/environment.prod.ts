@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  getEmployeeUrl: 'api/users',
+  getEmployeesUrl: 'api/users',
 };

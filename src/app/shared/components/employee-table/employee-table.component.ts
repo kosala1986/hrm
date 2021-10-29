@@ -32,13 +32,13 @@ export class EmployeeTableComponent implements OnInit {
     Column.ACTION,
   ]
 
-  constructor() { }
-
   @Input() dataSource!: UserDataSource;
 
   @Output() view = new EventEmitter<Employee>();
 
   @ViewChild(MatSort, { static: true }) sort!: MatSort;
+
+  constructor() { }
 
   ngOnInit(): void {
   }

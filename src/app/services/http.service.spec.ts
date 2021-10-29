@@ -1,12 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { HttpResponse } from '@angular/common/http';
 import { HttpService } from './http.service';
 
 describe('HttpServiceService', () => {
   let mockService: HttpService;
   let httpTestingController: HttpTestingController;
 
-  const mockResponse = true;
+  const mockResponse = new HttpResponse({url: 'getUrl'});
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -22,7 +23,7 @@ describe('HttpServiceService', () => {
 
   it('returns data when get method is successful', () => {
     mockService.get('getUrl').subscribe(response => {
-      expect(response).toBe(true);
+      expect(response.status).toEqual(200);
     });
 
     const req = httpTestingController.expectOne('getUrl');
@@ -47,7 +48,7 @@ describe('HttpServiceService', () => {
 
   it('returns data when post method is successful', () => {
     mockService.post('postUrl', {}).subscribe(response => {
-      expect(response).toBe(true);
+      expect(response).toEqual(mockResponse);
     });
 
     const req = httpTestingController.expectOne('postUrl');
