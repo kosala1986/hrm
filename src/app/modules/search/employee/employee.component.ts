@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Employee ,EmployeeLabel } from '../../../shared/models/employee';
+import { Employee, EmployeeLabel } from '../../../shared/models/employee';
 
 /**
  * The component which loads on the model to show employee details.
@@ -15,9 +15,9 @@ export class EmployeeComponent implements OnInit {
   readonly EmployeeLabel = EmployeeLabel;
 
   constructor(
-    public dialogRef: MatDialogRef<EmployeeComponent>,
-    @Inject(MAT_DIALOG_DATA) public employee: Employee) { 
-    }
+    readonly dialogRef: MatDialogRef<EmployeeComponent>,
+    @Inject(MAT_DIALOG_DATA) public employee: Employee) {
+  }
 
   ngOnInit(): void {
   }
