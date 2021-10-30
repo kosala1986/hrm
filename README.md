@@ -8,7 +8,7 @@ Make sure you have the [Angular CLI](https://angular.io/cli) installed globally.
 
 ## Development server
 
-Run `npm run start:proxy:mock:server` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm run hrm` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
