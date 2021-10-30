@@ -4,7 +4,7 @@ export interface Employee {
     name: string;
     email: string;
     location: string;
-    status: string;
+    status: EmployeeStatus;
     image: string;
 }
 
@@ -22,4 +22,10 @@ export enum SearchParamLabel {
     LIMIT = '_limit',
     SORT = '_sort',
     ORDER = '_order',
+}
+
+/** Employee status */
+export enum EmployeeStatus {
+    EMPLOYED = 'Employed',
+    DISCARDED = 'DISCARDED',
 }

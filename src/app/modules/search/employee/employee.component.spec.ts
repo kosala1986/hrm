@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { EmployeeComponent } from './employee.component';
 import { FormsModule } from '@angular/forms';
-import { Employee } from '../../../shared/models/employee';
+import { Employee ,EmployeeStatus} from '../../../shared/models/employee';
 
 describe('EmployeeComponent', () => {
   let component: EmployeeComponent;
@@ -14,7 +14,7 @@ describe('EmployeeComponent', () => {
     name: 'Kosala',
     location: 'Singapore',
     email: 'kosala@xyz.com',
-    status: 'Employed',
+    status: EmployeeStatus.EMPLOYED,
     image: 'img.jpg',
   };
 

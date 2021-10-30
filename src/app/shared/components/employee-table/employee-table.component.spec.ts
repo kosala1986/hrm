@@ -1,9 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { EmployeeDataSource } from '../../../services/employee.datasource';
-import { of } from "rxjs";
-
 import { EmployeeTableComponent } from './employee-table.component';
 import { EmployeeService, EmployeeList } from '../../../services/employee.service';
+import { EmployeeStatus } from '../../models/employee';
+import { of } from "rxjs";
 
 describe('EmployeeTableComponent', () => {
   let component: EmployeeTableComponent;
@@ -18,7 +18,7 @@ describe('EmployeeTableComponent', () => {
         name: 'Kosala',
         location: 'Singapore',
         email: 'kosala@xyz.com',
-        status: 'Employed',
+        status: EmployeeStatus.EMPLOYED,
         image: 'img.jpg',
       },
     ],

@@ -4,12 +4,13 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSortModule } from '@angular/material/sort';
 import { EmployeeComponent } from '../employee/employee.component';
-import { of } from "rxjs";
 import { EmployeeList } from '../../../services/employee.service';
 import { SharedModule } from '../../../shared/shared_module';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { EmployeeDataSource } from '../../../services/employee.datasource';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { EmployeeStatus } from '../../../shared/models/employee';
+import { of } from "rxjs";
 
 describe('EmployeeListComponent', () => {
   let component: EmployeeListComponent;
@@ -25,7 +26,7 @@ describe('EmployeeListComponent', () => {
         name: 'Kosala',
         location: 'Singapore',
         email: 'kosala@xyz.com',
-        status: 'Employed',
+        status: EmployeeStatus.EMPLOYED,
         image: 'img.jpg',
       },
     ],
