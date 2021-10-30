@@ -54,7 +54,7 @@ export class EmployeeListComponent implements OnInit, AfterViewInit, OnDestroy {
 
   totalCount = 0;
 
-  
+
   constructor(
     private readonly employeeService: EmployeeService,
     private readonly dialog: MatDialog,
@@ -121,8 +121,8 @@ export class EmployeeListComponent implements OnInit, AfterViewInit, OnDestroy {
       [SearchParamLabel.PAGE]: this.paginator.pageIndex + 1,
       [SearchParamLabel.LIMIT]: this.paginator.pageSize,
       sort: {
-        direction: this.employeeTable.sort.direction,
-        active: this.employeeTable.sort.active,
+        direction: (this.employeeTable.sort.direction) ? this.employeeTable.sort.direction : 'asc',
+        active: (this.employeeTable.sort.active) ? this.employeeTable.sort.active : Column.NAME,
       },
       ...(this.searchedValue && {
         filter: {

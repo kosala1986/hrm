@@ -2,9 +2,13 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.10.
 
+## Getting started
+
+Make sure you have the [Angular CLI](https://angular.io/cli) installed globally. We use [npm](https://docs.npmjs.com) to manage the dependencies, so we strongly recommend you to use it. you can install it from [Here](https://docs.npmjs.com/cli/v6/commands/npm-install), then run `npm install` to resolve all dependencies.
+
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm run start:proxy:mock:server` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 

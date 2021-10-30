@@ -10,8 +10,8 @@ export interface Employee {
 
 /** Readable names for employee fields displayed in the app. */
 export enum EmployeeLabel {
-    NAME = 'Name',
     EMAIL_ADDRESS = 'Email address',
+    NAME = 'Name',
     LOCATION = 'Location',
     STATUS = 'Status',
 }
