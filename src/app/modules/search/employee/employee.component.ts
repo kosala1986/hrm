@@ -2,6 +2,9 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Employee ,EmployeeLabel } from '../../../shared/models/employee';
 
+/**
+ * The component which loads on model to show employee details.
+ */
 @Component({
   selector: 'employee-dialog',
   templateUrl: './employee.component.html',
