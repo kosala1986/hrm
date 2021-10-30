@@ -50,7 +50,7 @@ export class EmployeeListComponent implements OnInit, AfterViewInit, OnDestroy {
 
   searchQuery?: Query;
 
-  readonly dataSource: UserDataSource;
+  dataSource: UserDataSource;
 
   totalCount = 0;
 

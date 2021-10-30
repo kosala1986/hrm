@@ -2,10 +2,10 @@
     "users": [{
             "id": 1,
             "name": "Kosala Yapa",
-            "location": "Ernesto Valverde",
+            "location": "Singapore",
             "email": "kosalayapa@gmail.com",
             "status": "Employed",
-            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+            "image": "https://randomuser.me/api/portraits/med/men/54.jpg"
         },
         {
             "id": 2,
@@ -13,7 +13,7 @@
             "location": "Singapore",
             "email": "zidane@gmail.com",
             "status": "Employed",
-            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+            "image": "https://randomuser.me/api/portraits/med/men/52.jpg"
         },
         {
             "id": 3,
@@ -21,7 +21,7 @@
             "location": "England",
             "email": "valverde@gmail.com",
             "status": "Discarded",
-            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+            "image": "https://randomuser.me/api/portraits/med/women/88.jpg"
         },
         {
             "id": 4,
@@ -29,7 +29,7 @@
             "location": "Australia",
             "email": "wardle@gmail.com",
             "status": "Discarded",
-            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+            "image": "https://randomuser.me/api/portraits/med/men/4.jpg"
         },
         {
             "id": 5,
@@ -37,111 +37,111 @@
             "location": "England",
             "email": "wardle@gmail.com",
             "status": "Discarded",
-            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+            "image": "https://randomuser.me/api/portraits/med/women/14.jpg"
         },
         {
             "id": 6,
-            "name": "Tom Betts",
-            "location": "Japan",
-            "email": "tom@gmail.com",
+            "name": "William Mathieu",
+            "location": "Switzerland",
+            "email": "william.mathieu@example.com",
             "status": "Employed",
-            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+            "image": "https://randomuser.me/api/portraits/med/men/99.jpg"
         },
         {
             "id": 7,
-            "name": "Tom Betts",
+            "name": "Fred Crawford",
             "location": "Japan",
-            "email": "tom@gmail.com",
+            "email": "fred.crawford@example.com",
             "status": "Employed",
-            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+            "image": "https://randomuser.me/api/portraits/med/men/37.jpg"
         },
         {
             "id": 8,
-            "name": "Tom Betts",
-            "location": "Japan",
-            "email": "tom@gmail.com",
-            "status": "Employed",
-            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+            "name": "Maya Wood",
+            "location": "United Kingdom",
+            "email": "maya.wood@example.com",
+            "status": "Discarded",
+            "image": "https://randomuser.me/api/portraits/med/women/86.jpg"
         },
         {
             "id": 9,
-            "name": "Tom Betts",
-            "location": "Japan",
-            "email": "tom@gmail.com",
+            "name": "Amanda Kley",
+            "location": "United Kingdom",
+            "email": "tamanda.kley@example.com",
             "status": "Employed",
-            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+            "image": "https://randomuser.me/api/portraits/med/women/29.jpg"
         },
         {
             "id": 10,
             "name": "Tom Betts",
             "location": "Japan",
-            "email": "tom@gmail.com",
+            "email": "amanda.kley@example.com",
             "status": "Employed",
-            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+            "image": "https://randomuser.me/api/portraits/med/women/29.jpg"
         },
         {
             "id": 11,
-            "name": "Tom Betts",
-            "location": "Japan",
-            "email": "tom@gmail.com",
+            "name": "Mel Zimmerman",
+            "location": "Netherlands",
+            "email": "mel.zimmerman@example.com",
             "status": "Employed",
-            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+            "image": "https://randomuser.me/api/portraits/med/men/14.jpg"
         },
         {
             "id": 12,
-            "name": "Tom Betts",
-            "location": "Japan",
-            "email": "tom@gmail.com",
+            "name": "Nenad Caron",
+            "location": "Switzerland",
+            "email": "nenad.caron@example.com",
             "status": "Employed",
-            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+            "image": "https://randomuser.me/api/portraits/med/men/63.jpg"
         },
         {
             "id": 13,
-            "name": "Tom Betts",
-            "location": "Japan",
-            "email": "tom@gmail.com",
+            "name": "Isaac Ramos",
+            "location": "Spain",
+            "email": "isaac.ramos@example.com",
             "status": "Employed",
-            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+            "image": "https://randomuser.me/api/portraits/med/men/81.jpg"
         },
         {
             "id": 14,
-            "name": "Tom Betts",
-            "location": "Japan",
-            "email": "tom@gmail.com",
+            "name": "Sofia Jones",
+            "location": "Canada",
+            "email": "sofia.jones@example.com",
             "status": "Employed",
-            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+            "image": "https://randomuser.me/api/portraits/med/women/25.jpg"
         },
         {
             "id": 15,
-            "name": "Tom Betts",
-            "location": "Japan",
-            "email": "tom@gmail.com",
+            "name": "August Rasmussen",
+            "location": "Denmark",
+            "email": "taugust.rasmussen@example.com",
             "status": "Employed",
-            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+            "image": "https://randomuser.me/api/portraits/med/men/93.jpg"
         },
         {
             "id": 16,
-            "name": "kosala Betts",
-            "location": "Japan",
-            "email": "tom@gmail.com",
+            "name": "Charles Roy",
+            "location": "Canada",
+            "email": "charles.roy@example.com",
             "status": "Employed",
-            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+            "image": "https://randomuser.me/api/portraits/med/men/26.jpg"
         },
         {
             "id": 17,
-            "name": "AAA Betts",
-            "location": "Japan",
-            "email": "tom@gmail.com",
+            "name": "Jermain Van Huffelen",
+            "location": "Netherlands",
+            "email": "jermain.vanhuffelen@example.com",
             "status": "Employed",
-            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+            "image": "https://randomuser.me/api/portraits/med/men/14.jpg"
         },
         {
             "id": 18,
-            "name": "zzz Betts",
-            "location": "Japan",
-            "email": "tom@gmail.com",
+            "name": "Eevi Valli",
+            "location": "Finland",
+            "email": "eevi.valli@example.com",
             "status": "Employed",
-            "image": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+            "image": "https://randomuser.me/api/portraits/med/women/17.jpg"
         }
     ]
 }
