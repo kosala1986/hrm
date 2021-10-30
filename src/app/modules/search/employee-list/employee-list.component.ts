@@ -7,7 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Subject, merge } from 'rxjs';
 import { EmployeeComponent } from './../employee/employee.component';
 import { UserDataSource } from "../../../services/user.datasource";
-import { tap, debounceTime, distinctUntilChanged, map, filter } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, map, filter } from 'rxjs/operators';
 import { Column } from '../../../shared/components/employee-table/employee-table.component';
 import { Sort } from '@angular/material/sort';
 
@@ -90,38 +90,30 @@ export class EmployeeListComponent implements OnInit, AfterViewInit, OnDestroy {
         }),
         filter(searchedText => searchedText.length === 0 || searchedText.length > 2),
         debounceTime(500),
-        distinctUntilChanged(),
-        tap((searchedValue) => {
+        distinctUntilChanged())
+      .subscribe((searchedValue) => {
 
-          this.paginator.pageIndex = 0;
-          this.searchedValue = searchedValue;
-
-          this.loadEmployees();
-        })
-      )
-      .subscribe();
+        this.paginator.pageIndex = 0;
+        this.searchedValue = searchedValue;
+        this.loadEmployees();
+      });
 
     this.dataSource.totalCount$
-      .pipe(
-        tap((total) => {
-          this.paginator.length = total;
-        })
-      )
-      .subscribe();
+      .subscribe((total) => {
+        this.paginator.length = total;
+      });
 
     merge(this.employeeTable.sort.sortChange, this.paginator.page)
-      .pipe(
-        tap(() => {
-          if (!this.employeeTable.sort.direction) {
-            this.employeeTable.sort.direction = 'asc';
-            this.employeeTable.sort.active = Column.NAME;
-          }
-          this.loadEmployees();
-        })
-      )
-      .subscribe();
+      .subscribe(() => {
+        if (!this.employeeTable.sort.direction) {
+          this.employeeTable.sort.direction = 'asc';
+          this.employeeTable.sort.active = Column.NAME;
+        }
+        this.loadEmployees();
+      });
   }
 
+  /** gets employeees connecting to the UserDataSource. */
   loadEmployees() {
 
     const filter: Query = {
