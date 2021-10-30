@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-/** component which represents top bar. */
+/** component which represents the top bar. */
 @Component({
   selector: 'title-bar',
   templateUrl: './title-bar.component.html',

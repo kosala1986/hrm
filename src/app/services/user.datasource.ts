@@ -8,7 +8,7 @@ import { Query } from '../modules/search/employee-list/employee-list.component';
 
 /**
  *  Custom data source which connects to the datatable while sorting, filtering
- *  and pagination events. This calls UserService to get data from API.
+ *  and pagination events. This calls UserService to get data from the API.
  */
 export class UserDataSource implements DataSource<Employee> {
     private EmployeesSubject = new BehaviorSubject<Employee[]>([]);
