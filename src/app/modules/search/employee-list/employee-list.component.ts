@@ -26,7 +26,7 @@ export interface Filter {
 }
 
 /**
- *  This component represents the employee table with search functionality.
+ *  This component represents the employee list table with search functionality.
  */
 @Component({
   selector: 'app-employee-list',
