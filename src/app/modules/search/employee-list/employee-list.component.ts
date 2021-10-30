@@ -7,7 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Subject, merge } from 'rxjs';
 import { EmployeeComponent } from './../employee/employee.component';
 import { EmployeeDataSource } from "../../../services/employee.datasource";
-import { debounceTime, distinctUntilChanged, map, filter, throwIfEmpty } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, map, filter, combineLatest } from 'rxjs/operators';
 import { Column } from '../../../shared/components/employee-table/employee-table.component';
 import { Sort } from '@angular/material/sort';
 
@@ -54,6 +54,7 @@ export class EmployeeListComponent implements OnInit, AfterViewInit, OnDestroy {
 
   totalCount = 0;
 
+  
   constructor(
     private readonly employeeService: EmployeeService,
     private readonly dialog: MatDialog,
@@ -132,6 +133,11 @@ export class EmployeeListComponent implements OnInit, AfterViewInit, OnDestroy {
     }
     this.dataSource.getEmployees(filter);
 
+  }
+
+  resetSearchField() {
+    this.searchedValue = '';
+    this.searchSubject$.next(new Event(''));
   }
 
   viewEmployee(employee: Employee): void {
