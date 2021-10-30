@@ -2,27 +2,27 @@
 import { CollectionViewer, DataSource } from "@angular/cdk/collections";
 import { Observable, BehaviorSubject, of } from "rxjs";
 import { Employee } from '../shared/models/employee';
-import { UserService, EmployeeList } from './user.service';
+import { EmployeeService, EmployeeList } from './employee.service';
 import { catchError, finalize } from "rxjs/operators";
 import { Query } from '../modules/search/employee-list/employee-list.component';
 
 /**
  *  Custom data source which connects to the datatable while sorting, filtering
- *  and pagination events. This calls UserService to get data from the API.
+ *  and pagination events. This calls EmployeeService to get data from the API.
  */
-export class UserDataSource implements DataSource<Employee> {
+export class EmployeeDataSource implements DataSource<Employee> {
     private EmployeesSubject = new BehaviorSubject<Employee[]>([]);
 
     private totalCountSubject = new BehaviorSubject<number>(0);
     public totalCount$ = this.totalCountSubject.asObservable();
 
-    constructor(private userService: UserService) {
+    constructor(private employeeService: EmployeeService) {
 
     }
 
     getEmployees(query: Query) {
 
-        this.userService.getEmployees(query)
+        this.employeeService.getEmployees(query)
             .pipe(
                 catchError(() => of([])),
                 finalize(() => { })

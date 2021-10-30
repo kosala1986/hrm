@@ -1,14 +1,14 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { UserDataSource } from '../../../services/user.datasource';
+import { EmployeeDataSource } from '../../../services/employee.datasource';
 import { of } from "rxjs";
 
 import { EmployeeTableComponent } from './employee-table.component';
-import { UserService, EmployeeList } from '../../../services/user.service';
+import { EmployeeService, EmployeeList } from '../../../services/employee.service';
 
 describe('EmployeeTableComponent', () => {
   let component: EmployeeTableComponent;
   let fixture: ComponentFixture<EmployeeTableComponent>;
-  const mockUserService = jasmine.createSpyObj('UserService', ['getEmployees']);
+  const mockEmployeeService = jasmine.createSpyObj('EmployeeService', ['getEmployees']);
 
   const mockEmpList: EmployeeList = {
     total: 0,
@@ -28,18 +28,18 @@ describe('EmployeeTableComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [EmployeeTableComponent],
       providers: [
-        { provide: UserService, useValue: mockUserService }
+        { provide: EmployeeService, useValue: mockEmployeeService }
       ]
     })
       .compileComponents();
   });
 
   beforeEach(() => {
-    mockUserService.getEmployees.and.returnValue(of(mockEmpList));
+    mockEmployeeService.getEmployees.and.returnValue(of(mockEmpList));
 
     fixture = TestBed.createComponent(EmployeeTableComponent);
     component = fixture.componentInstance;
-    component.dataSource = new UserDataSource(mockUserService);
+    component.dataSource = new EmployeeDataSource(mockEmployeeService);
     fixture.detectChanges();
   });
 

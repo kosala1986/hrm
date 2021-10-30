@@ -1,16 +1,16 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpService } from './http.service';
-import { UserService } from './user.service';
+import { EmployeeService } from './employee.service';
 import { HttpResponse, HttpHeaders } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { EmployeeList } from './user.service';
+import { EmployeeList } from './employee.service';
 import { environment } from 'src/environments/environment';
 import { SearchParamLabel } from '../shared/models/employee';
 import { Query } from '../modules/search/employee-list/employee-list.component';
 import { of } from 'rxjs';
 
-describe('UserService', () => {
-  let service: UserService;
+describe('EmployeeService', () => {
+  let service: EmployeeService;
   let mockHttpService: HttpService;
   let httpTestingController: HttpTestingController;
 
@@ -24,7 +24,7 @@ describe('UserService', () => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
     });
-    service = TestBed.inject(UserService);
+    service = TestBed.inject(EmployeeService);
     mockHttpService = TestBed.inject(HttpService);
     httpTestingController = TestBed.inject(HttpTestingController);
 

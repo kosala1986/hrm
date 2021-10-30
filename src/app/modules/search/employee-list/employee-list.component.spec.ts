@@ -5,17 +5,17 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSortModule } from '@angular/material/sort';
 import { EmployeeComponent } from '../employee/employee.component';
 import { of } from "rxjs";
-import { EmployeeList } from '../../../services/user.service';
+import { EmployeeList } from '../../../services/employee.service';
 import { SharedModule } from '../../../shared/shared_module';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { UserDataSource } from '../../../services/user.datasource';
+import { EmployeeDataSource } from '../../../services/employee.datasource';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('EmployeeListComponent', () => {
   let component: EmployeeListComponent;
   let fixture: ComponentFixture<EmployeeListComponent>;
   let mockDialog: MatDialog = jasmine.createSpyObj('MatDialog', ['open', 'close']);
-  const mockUserService = jasmine.createSpyObj('UserService', ['getEmployees']);
+  const mockEmployeeService = jasmine.createSpyObj('EmployeeService', ['getEmployees']);
 
   const mockEmpList: EmployeeList = {
     total: 0,
@@ -52,11 +52,11 @@ describe('EmployeeListComponent', () => {
   });
 
   beforeEach(() => {
-    mockUserService.getEmployees.and.returnValue(of(mockEmpList));
+    mockEmployeeService.getEmployees.and.returnValue(of(mockEmpList));
 
     fixture = TestBed.createComponent(EmployeeListComponent);
     component = fixture.componentInstance;
-    component.dataSource = new UserDataSource(mockUserService);
+    component.dataSource = new EmployeeDataSource(mockEmployeeService);
 
     fixture.detectChanges();
   });
@@ -65,7 +65,7 @@ describe('EmployeeListComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should get employees when user search with filter', fakeAsync(() => {
+  it('should get employees when employee search with filter', fakeAsync(() => {
     spyOn(component, 'loadEmployees');
     component.searchSubject$.next(new KeyboardEvent('Kosala Yapa'));
 

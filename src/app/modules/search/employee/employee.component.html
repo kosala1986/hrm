@@ -29,6 +29,6 @@
     </mat-dialog-content>
     <mat-dialog-actions>
         <button mat-raised-button matDialogClose>Cancel</button>
-        <button mat-raised-button color="primary" [disabled]="empForm.invalid" [matDialogClose]="employee">Update</button>
+        <button mat-raised-button color="primary" [disabled]="empForm.invalid" [matDialogClose]="{employee: employee, isValid: empForm.valid}">Update</button>
     </mat-dialog-actions>
 </div>

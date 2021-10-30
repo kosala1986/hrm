@@ -2,12 +2,12 @@ import { Component, OnInit, ViewChild, AfterViewInit, OnDestroy } from '@angular
 import { MatPaginator } from '@angular/material/paginator';
 import { Employee, SearchParamLabel } from '../../../shared/models/employee';
 import { EmployeeTableComponent } from '../../../shared/components/employee-table/employee-table.component';
-import { UserService } from '../../../services/user.service';
+import { EmployeeService } from '../../../services/employee.service';
 import { MatDialog } from '@angular/material/dialog';
 import { Subject, merge } from 'rxjs';
 import { EmployeeComponent } from './../employee/employee.component';
-import { UserDataSource } from "../../../services/user.datasource";
-import { debounceTime, distinctUntilChanged, map, filter } from 'rxjs/operators';
+import { EmployeeDataSource } from "../../../services/employee.datasource";
+import { debounceTime, distinctUntilChanged, map, filter, throwIfEmpty } from 'rxjs/operators';
 import { Column } from '../../../shared/components/employee-table/employee-table.component';
 import { Sort } from '@angular/material/sort';
 
@@ -50,15 +50,15 @@ export class EmployeeListComponent implements OnInit, AfterViewInit, OnDestroy {
 
   searchQuery?: Query;
 
-  dataSource: UserDataSource;
+  dataSource: EmployeeDataSource;
 
   totalCount = 0;
 
   constructor(
-    private readonly userService: UserService,
+    private readonly employeeService: EmployeeService,
     private readonly dialog: MatDialog,
   ) {
-    this.dataSource = new UserDataSource(this.userService);
+    this.dataSource = new EmployeeDataSource(this.employeeService);
   }
 
   ngOnInit(): void {
@@ -113,7 +113,7 @@ export class EmployeeListComponent implements OnInit, AfterViewInit, OnDestroy {
       });
   }
 
-  /** gets employeees connecting to the UserDataSource. */
+  /** gets employeees connecting to the EmployeeDataSource. */
   loadEmployees() {
 
     const filter: Query = {
@@ -135,9 +135,13 @@ export class EmployeeListComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   viewEmployee(employee: Employee): void {
+
     const dialogRef = this.dialog.open(EmployeeComponent, {
       data: employee,
+      disableClose: true,
       width: '400px',
+    });
+    dialogRef.afterClosed().subscribe((updatedForm) => {
     });
   }
 

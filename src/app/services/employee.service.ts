@@ -11,11 +11,11 @@ export interface EmployeeList {
   total: number;
   result: Employee[];
 }
-/** User service providing data to the components. */
+/** EmployeeService providing data to the components. */
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class EmployeeService {
 
   constructor(
     private readonly httpService: HttpService,

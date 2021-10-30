@@ -5,7 +5,7 @@ import { SearchRoutingModule } from './search-routing.module';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { SharedModule } from '../../shared/shared_module';
 import { MatDialogModule } from '@angular/material/dialog';
-import { UserService } from 'src/app/services/user.service';
+import { EmployeeService } from 'src/app/services/employee.service';
 import { EmployeeComponent } from './employee/employee.component';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
@@ -32,7 +32,7 @@ import { MatSelectModule } from '@angular/material/select';
     SharedModule,
   ],
   providers: [
-    UserService,
+    EmployeeService,
   ],
 })
 export class SearchModule { }

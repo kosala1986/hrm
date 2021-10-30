@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  getEmployeesUrl: 'api/users',
+  getEmployeesUrl: 'api/employees',
 };
 
 /*

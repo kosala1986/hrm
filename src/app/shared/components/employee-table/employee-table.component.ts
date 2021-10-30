@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ViewChild, Output, EventEmitter } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
-import { UserDataSource } from '../../../services/user.datasource';
+import { EmployeeDataSource } from '../../../services/employee.datasource';
 import { Employee, EmployeeLabel } from '../../models/employee';
 
 /** Employee table column names. */
@@ -32,7 +32,7 @@ export class EmployeeTableComponent implements OnInit {
     Column.ACTION,
   ]
 
-  @Input() dataSource!: UserDataSource;
+  @Input() dataSource!: EmployeeDataSource;
 
   @Output() view = new EventEmitter<Employee>();
 
