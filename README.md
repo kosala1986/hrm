@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Getting started
 
-Make sure you have the [Angular CLI](https://angular.io/cli) installed globally. We use [npm](https://docs.npmjs.com) to manage the dependencies, so we strongly recommend you to use it. you can install it from [Here](https://docs.npmjs.com/cli/v6/commands/npm-install), then run `npm install` to resolve all dependencies.
+Make sure you have the [Angular CLI](https://angular.io/cli) installed globally. We use [npm](https://docs.npmjs.com) to manage the dependencies, so I strongly recommend you to use it. you can install it from [Here](https://docs.npmjs.com/cli/v6/commands/npm-install), then run `npm install` to resolve all dependencies.
 
 ## Development server
 
