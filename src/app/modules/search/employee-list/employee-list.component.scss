@@ -1,3 +1,5 @@
+@import "../../../shared/css/responsive_mixins";
+
 .employee-list-container {
     padding: 20px;
 
@@ -7,5 +9,9 @@
         flex-wrap: wrap;
         gap: 5px;
         margin: 20px;
+
+        @include for-screen(sm, '<=') {
+            justify-content: center;
+        }
     }
 }
