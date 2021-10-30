@@ -54,7 +54,6 @@ export class EmployeeListComponent implements OnInit, AfterViewInit, OnDestroy {
 
   totalCount = 0;
 
-
   constructor(
     private readonly employeeService: EmployeeService,
     private readonly dialog: MatDialog,
