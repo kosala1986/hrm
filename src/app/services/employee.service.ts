@@ -7,10 +7,12 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Query } from '../modules/search/employee-list/employee-list.component';
 
+/** Employee list model */
 export interface EmployeeList {
   total: number;
   result: Employee[];
 }
+
 /** EmployeeService providing data to the components. */
 @Injectable({
   providedIn: 'root'
