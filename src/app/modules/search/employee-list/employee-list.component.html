@@ -1,7 +1,10 @@
 <div class="employee-list-container">
     <div class="filter-container">
         <mat-form-field class="example-full-width" appearance="fill">
-            <input matInput placeholder="Search" [(ngModel)]="searchedValue" (keyup)="searchSubject$.next($event)">
+            <input matInput 
+                   placeholder="Search" 
+                   [(ngModel)]="searchedValue" 
+                   (keyup)="searchSubject$.next($event)">
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Filter</mat-label>

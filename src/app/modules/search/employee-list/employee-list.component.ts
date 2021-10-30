@@ -145,7 +145,7 @@ export class EmployeeListComponent implements OnInit, AfterViewInit, OnDestroy {
     const dialogRef = this.dialog.open(EmployeeComponent, {
       data: employee,
       disableClose: true,
-      width: '400px',
+      width: '500px',
     });
     dialogRef.afterClosed().subscribe((updatedForm) => {
     });

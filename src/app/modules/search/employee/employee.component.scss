@@ -1,4 +1,8 @@
+@import "../../../shared/css/responsive_mixins";
+
 .form-container {
+    width: 100%;
+
     mat-form-field {
         width: 100%;
     }
@@ -6,13 +10,34 @@
 
 .image-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin-bottom: 20px;
+    padding: 0px 25px 0px 25px;
+
+    @include for-screen(sm, '<=') {
+        align-items: center;
+    }
+
     img {
+        border-radius: 50%;
         height: 100px;
         width: 100px;
     }
+
     .status {
         margin: 10px;
+        text-align: center;
+        font-style: italic;
+    }
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    @include for-screen(sm, '<=') {
+        flex-direction: column;
     }
 }
