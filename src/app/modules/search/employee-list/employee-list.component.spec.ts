@@ -66,7 +66,7 @@ describe('EmployeeListComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should get employees when employee search with filter', fakeAsync(() => {
+  it('should get employees when user search with filter', fakeAsync(() => {
     spyOn(component, 'loadEmployees');
     component.searchSubject$.next(new KeyboardEvent('Kosala Yapa'));
 
